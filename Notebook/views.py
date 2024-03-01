@@ -1,19 +1,33 @@
 from django.shortcuts import render
+from Notebook import models
 
 # Create your views here.
+def index(request):
+    return render(request,"index.html",{})
 def megoldas(request):
     return render(request,"megoldas.html",{})
-def _2van(request):
-    return render(request,"_2van.html",{})
-def _3gyarto(request):
-    return render(request,"_3gyarto.html",{})
-def _4teljes(request):
-    return render(request,"_4teljes.html",{})
-def _5vasarlas(request):
-    return render(request,"_5vasarlas.html",{})
-def _6nulla(request):
-    return render(request,"_6nulla.html",{})
-def _7intel(request):
-    return render(request,"_7intel.html",{})
-def _(request):
-    return render(request,"_",{})
+def w_2van(request):
+    return render(request,"w_2van.html",{})
+def w_3gyarto(request):
+    return render(request,"w_3gyarto.html",{})
+def w_4teljes(request):
+    return render(request,"w_4teljes.html",{})
+def w_5vasarlas(request):
+    return render(request,"w_5vasarlas.html",{})
+def w_6nulla(request):
+    return render(request,"w_6nulla.html",{})
+def w_7intel(request):
+    return render(request,"w_7intel.html",{})
+def w_(request):
+    return render(request,"w_",{})
+def feltoltes(request):
+    return render(request,"feltoltes.html",{})
+def feltoltes_fajl(request, tabla):
+    #tipus={"gep":models.gep,"oprendszer":models.oprendszer,"processzor":models.processzor}[tabla]
+    #for i in request
+
+    return render(request,"feltoltes_fajl.html",{})
+def feltoltes_fajl_kuld(request):
+    for i in request.POST['tartalom']:
+        g=6
+    return render(request,"feltoltes_fajl_kuld.html",request.GET)

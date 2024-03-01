@@ -19,12 +19,17 @@ from django.urls import path
 from Notebook.views import *
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin', admin.site.urls),
+    path('', index),
     path('megoldas', megoldas),
-    path('megoldas/2van', _2van),
-    path('megoldas/3gyarto', _3gyarto),
-    path('megoldas/4teljes', _4teljes),
-    path('megoldas/5vasarlas', _5vasarlas),
-    path('megoldas/6nulla', _6nulla),
-    path('megoldas', _7intel),
+    path('megoldas/2van', w_2van),
+    path('megoldas/3gyarto', w_3gyarto),
+    path('megoldas/4teljes', w_4teljes),
+    path('megoldas/5vasarlas', w_5vasarlas),
+    path('megoldas/6nulla', w_6nulla),
+    path('megoldas/7intel', w_7intel),
+    path('feltoltes', feltoltes),
+    path('feltoltes/fajl/kuld', feltoltes_fajl_kuld),
+    path('feltoltes/fajl/<str:tabla>', feltoltes_fajl),
+
 ]
