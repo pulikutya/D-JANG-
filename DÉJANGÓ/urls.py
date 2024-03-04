@@ -29,7 +29,7 @@ urlpatterns = [
     path('megoldas/6nulla', w_6nulla),
     path('megoldas/7intel', w_7intel),
     path('feltoltes', feltoltes),
-    path('feltoltes/fajl/kuld', feltoltes_fajl_kuld),
+    path('feltoltes/fajl/<str:tabla>/kuld', feltoltes_fajl_kuld),
     path('feltoltes/fajl/<str:tabla>', feltoltes_fajl),
 
 ]

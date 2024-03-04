@@ -23,11 +23,13 @@ def w_(request):
 def feltoltes(request):
     return render(request,"feltoltes.html",{})
 def feltoltes_fajl(request, tabla):
-    #tipus={"gep":models.gep,"oprendszer":models.oprendszer,"processzor":models.processzor}[tabla]
     #for i in request
 
-    return render(request,"feltoltes_fajl.html",{})
-def feltoltes_fajl_kuld(request):
-    for i in request.POST['tartalom']:
-        g=6
-    return render(request,"feltoltes_fajl_kuld.html",request.GET)
+    return render(request,"feltoltes_fajl.html",{"tabla":tabla})
+def feltoltes_fajl_kuld(request, tabla):
+    
+    tipus={"gep":models.gep,"oprendszer":models.oprendszer,"processzor":models.processzor}[tabla]
+    for i in request.POST['tartalom'].split('\n'):
+        
+        print(i)
+    return render(request,"feltoltes_fajl_kuld.html",{"tabla":tabla})

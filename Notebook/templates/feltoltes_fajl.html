@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="kuld" method="POST">
+    <form action="{{tabla}}/kuld" method="POST">
         {% csrf_token %}
         <textarea name="tartalom" id="tartalom" cols="30" rows="10"></textarea>
         <input type="submit">
