@@ -29,7 +29,9 @@ def feltoltes_fajl(request, tabla):
 def feltoltes_fajl_kuld(request, tabla):
     
     tipus={"gep":models.gep,"oprendszer":models.oprendszer,"processzor":models.processzor}[tabla]
+    fn={models.gep:lambda l:models.gep.objects.create(gyarto=l[0],tipus=l[1],kijelzo=float(l[2].replace(",",".")),memoria=int(l[3]),merevlemez=int(l[4]),videovezerlo=l[5],processzorid=int(l[6]),oprendszerid=int(l[7]),db=int(l[8])),
+        models.processzor:lambda l: models.processzor.objects.create(id=int(l[0]),gyarto=l[1],tipus=l[2]),
+        models.oprendszer:lambda l: models.oprendszer.objects.create(id=int(l[0]),nev=l[1])}
     for i in request.POST['tartalom'].split('\n'):
-        
-        print(i)
+        fn[tipus](i.strip().split('\t'))
     return render(request,"feltoltes_fajl_kuld.html",{"tabla":tabla})

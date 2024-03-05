@@ -5,7 +5,7 @@ class gep(models.Model):
     #id=models.IntegerField()
     gyarto=models.CharField(max_length=255)
     tipus=models.CharField(max_length=255)
-    kijelzo=models.IntegerField()
+    kijelzo=models.FloatField()
     memoria=models.IntegerField()
     merevlemez=models.IntegerField()
     videovezerlo=models.CharField(max_length=255)
