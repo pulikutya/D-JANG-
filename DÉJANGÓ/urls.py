@@ -19,7 +19,7 @@ from django.urls import path
 from Notebook.views import *
 
 urlpatterns = [
-    path('admin', admin.site.urls),
+    path('admin/', admin.site.urls),
     path('', index),
     path('megoldas', megoldas),
     path('megoldas/2van', w_2van),
